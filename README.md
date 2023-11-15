@@ -1,2 +1,2 @@
-# elte_ik
-ez itt valamit
+# ELTE-IK
+Minden félévben a különböző tárgyakhoz tartozó naygok találhatóak meg.
