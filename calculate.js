@@ -11,7 +11,7 @@ document.getElementById("avarageAdd").addEventListener("click", countAvarageAdd)
 document.getElementById("avarageClear").addEventListener("click",clearAvarage);
 document.getElementById("avarageMinus").addEventListener("click", countAvarageMinus);
 
-function countAvarageAdd(){
+function countAvarageAdd(event){
     avarageCountArray.push(avCount.value);
     avarageValueArray.push(avValue.value);
     let countData=0;
@@ -29,13 +29,14 @@ function countAvarageAdd(){
     }
     let avaragePrice=price/db;
     let value=countData*avaragePrice;
-    avarageResultCount.innerHTML=`Időszaki zárókészlet: ${countData}`;
-    avarageResultPrice.innerHTML=`Időszaki átlagár: ${avaragePrice}`;
-    avarageResultValue.innerHTML=`Időszaki zárókészlet értéke: ${value}`;
+    avarageResultCount.innerHTML=`<b>Időszaki zárókészlet: ${countData}</b>`;
+    avarageResultPrice.innerHTML=`<b>Időszaki átlagár: ${avaragePrice}</b>`;
+    avarageResultValue.innerHTML=`<b>Időszaki zárókészlet értéke: ${value}</b>`;
+    event.preventDefault();
 }
 
 
-function countAvarageMinus(){
+function countAvarageMinus(event){
     let minusValue=avCount.value;
     avarageCountArray.push(parseInt(minusValue)*(-1));
     avarageValueArray.push(avValue.value);
@@ -53,11 +54,12 @@ function countAvarageMinus(){
     }
     let avaragePrice=price/db;
     let value=countData*avaragePrice;
-    avarageResultCount.innerHTML=`Időszaki zárókészlet: ${countData}`;
-    avarageResultPrice.innerHTML=`Időszaki átlagár: ${avaragePrice}`;
-    avarageResultValue.innerHTML=`Időszaki zárókészlet értéke: ${value}`;
+    avarageResultCount.innerHTML=`<b>Időszaki zárókészlet: ${countData}</b>`;
+    avarageResultPrice.innerHTML=`<b>Időszaki átlagár: ${avaragePrice}</b>`;
+    avarageResultValue.innerHTML=`<b>Időszaki zárókészlet értéke: ${value}</b>`;
+    event.preventDefault();
 }
-function clearAvarage(){
+function clearAvarage(event){
     avCount.value="";
     avValue.value="";
     avarageResultCount.innerHTML="";
@@ -65,6 +67,7 @@ function clearAvarage(){
     avarageResultValue.innerHTML="";
     avarageCountArray=[];
     avarageValueArray=[];
+    event.preventDefault();
 }
 
 
@@ -87,7 +90,8 @@ document.getElementById("avarageMinusContinue").addEventListener("click", countA
 
 let backCount=0;
 let backPrice=0;
-function countAvarageAddC(){
+
+function countAvarageAddC(event){
     avarageCountArrayC.push(avCountC.value);
     avarageValueArrayC.push(avValueC.value);
     let countData=0;
@@ -118,14 +122,14 @@ function countAvarageAddC(){
     }
     backCount=countData;
     backPrice=avaragePrice;
-    avarageResultCountC.innerHTML=`Időszaki zárókészlet: ${countData}`;
-    avarageResultPriceC.innerHTML=`Időszaki átlagár: ${avaragePrice}`;
-    avarageResultValueC.innerHTML=`Időszaki zárókészlet értéke: ${value}`;
-    
+    avarageResultCountC.innerHTML=`<b>Időszaki zárókészlet: ${countData}</b>`;
+    avarageResultPriceC.innerHTML=`<b>Időszaki átlagár: ${avaragePrice}</b>`;
+    avarageResultValueC.innerHTML=`<b>Időszaki zárókészlet értéke: ${value}</b>`;
+    event.preventDefault();
 }
 
 
-function countAvarageMinusC(){
+function countAvarageMinusC(event){
     let minusValue=avCountC.value;
     avarageCountArrayC.push(parseInt(minusValue)*(-1));
     avarageValueArrayC.push(avValueC.value);
@@ -137,12 +141,12 @@ function countAvarageMinusC(){
     let value=countData*avaragePrice;
     backCount=countData;
     backPrice=avaragePrice;
-    avarageResultCountC.innerHTML=`Időszaki zárókészlet: ${countData}`;
-    avarageResultPriceC.innerHTML=`Időszaki átlagár: ${avaragePrice}`;
-    avarageResultValueC.innerHTML=`Időszaki zárókészlet értéke: ${value}`;
-   
+    avarageResultCountC.innerHTML=`<b>Időszaki zárókészlet: ${countData}</b>`;
+    avarageResultPriceC.innerHTML=`<b>Időszaki átlagár: ${avaragePrice}</b>`;
+    avarageResultValueC.innerHTML=`<b>Időszaki zárókészlet értéke: ${value}</b>`;
+    event.preventDefault();
 }
-function clearAvarageC(){
+function clearAvarageC(event){
     avCountC.value="";
     avValueC.value="";
     avarageResultCountC.innerHTML="";
@@ -150,6 +154,7 @@ function clearAvarageC(){
     avarageResultValueC.innerHTML="";
     avarageCountArrayC=[];
     avarageValueArrayC=[];
+    event.preventDefault();
 }
 
 
@@ -167,18 +172,21 @@ document.getElementById("avarageClearFifo").addEventListener("click",clearFifo);
 document.getElementById("avarageMinusFifo").addEventListener("click", countMinusFifo);
 
 
-function countAddFifo(){
-    avarageResultCountF.innerHTML=`Időszaki zárókészlet: `;
-    avarageResultPriceF.innerHTML=`Időszaki átlagár: `;
+function countAddFifo(event){
+    let resultCountPrice=` <table> <tr> <td> <b>Időszaki zárókészlet </b> </td> <td>  <b>Időszaki átagár</b> </td> </tr> `;
+   // avarageResultCountF.innerHTML=`Időszaki zárókészlet/Időszaki átagár: <table>`;
+   // avarageResultPriceF.innerHTML=`Időszaki átlagár: `;
     
     avarageCountArrayF.push(avCountF.value);
     avarageValueArrayF.push(avValueF.value);
     let countData=0;
     for(let i = 0; i<avarageCountArrayF.length; i++){
             countData+=parseInt(avarageCountArrayF[i],10);
+            resultCountPrice+=`<tr>`
             if(avarageCountArrayF[i]>0){
-                avarageResultCountF.innerHTML+=`${avarageCountArrayF[i]}   `
-                avarageResultPriceF.innerHTML+=`${avarageValueArrayF[i]}   `
+                resultCountPrice+=`<td> ${avarageCountArrayF[i]} </td> <td>  ${avarageValueArrayF[i]} </td> </tr>`
+                //avarageResultCountF.innerHTML+=`${avarageCountArrayF[i]} ${avarageValueArrayF[i]} `;
+                //avarageResultPriceF.innerHTML+=`${avarageValueArrayF[i]}   `
             }      
     }
     
@@ -192,13 +200,16 @@ function countAddFifo(){
     }
     let avaragePrice=price/db;
     let value=countData*avaragePrice;
+    resultCountPrice+=`</table>`
+    avarageResultCountF.innerHTML=resultCountPrice;
     avarageResultValueF.innerHTML=`Időszaki zárókészlet értéke: ${value}`;
-    
+    event.preventDefault();
 }
 
-function countMinusFifo(){
-    avarageResultCountF.innerHTML=`Időszaki zárókészlet: `;
-    avarageResultPriceF.innerHTML=`Időszaki átlagár: `;
+function countMinusFifo(event){
+    let resultCountPrice=` <table> <tr> <td> <b>Időszaki zárókészlet </b> </td> <td>  <b>Időszaki átagár</b> </td> </tr>`;
+    //avarageResultCountF.innerHTML=`Időszaki zárókészlet: `;
+    //avarageResultPriceF.innerHTML=`Időszaki átlagár: `;
     let minusValue=parseInt(avCountF.value);
     let countData=0;
     for(let i = 0; i<avarageCountArrayF.length; i++){
@@ -215,9 +226,11 @@ function countMinusFifo(){
     }
     for(let i=0; i<avarageCountArrayF.length; i++){
         countData+=avarageCountArrayF[i];
+        resultCountPrice+=`<tr>`
         if(avarageCountArrayF[i]>0){
-            avarageResultCountF.innerHTML+=`${avarageCountArrayF[i]}   `
-            avarageResultPriceF.innerHTML+=`${avarageValueArrayF[i]}   `
+            resultCountPrice+=`<td> ${avarageCountArrayF[i]} </td> <td>  ${avarageValueArrayF[i]} </td> </tr>`
+            //avarageResultCountF.innerHTML+=`${avarageCountArrayF[i]}   `
+            //avarageResultPriceF.innerHTML+=`${avarageValueArrayF[i]}   `
         }      
     }
     let price=0;
@@ -230,9 +243,12 @@ function countMinusFifo(){
     }
     let avaragePrice=price/db;
     let value=countData*avaragePrice;
+    resultCountPrice+=`</table>`
+    avarageResultCountF.innerHTML=resultCountPrice;
     avarageResultValueF.innerHTML=`Időszaki zárókészlet értéke: ${value}`;
+    event.preventDefault();
 }
-function clearFifo(){
+function clearFifo(event){
     avCountF.value="";
     avValueF.value="";
     avarageResultCountF.innerHTML="";
@@ -240,6 +256,7 @@ function clearFifo(){
     avarageResultValueF.innerHTML="";
     avarageCountArrayF=[];
     avarageValueArrayF=[];
+    event.preventDefault();
 }
 
 
@@ -257,18 +274,21 @@ document.getElementById("avarageClearLifo").addEventListener("click",clearLifo);
 document.getElementById("avarageMinusLifo").addEventListener("click", countMinusLifo);
 
 
-function countAddLifo(){
-    avarageResultCountL.innerHTML=`Időszaki zárókészlet: `;
-    avarageResultPriceL.innerHTML=`Időszaki átlagár: `;
+function countAddLifo(event){
+    let resultCountPrice=` <table> <tr> <td> <b>Időszaki zárókészlet </b> </td> <td>  <b>Időszaki átagár</b> </td> </tr>`;
+    //avarageResultCountL.innerHTML=`Időszaki zárókészlet: `;
+    //avarageResultPriceL.innerHTML=`Időszaki átlagár: `;
     
     avarageCountArrayL.push(avCountL.value);
     avarageValueArrayL.push(avValueL.value);
     let countData=0;
     for(let i = 0; i<avarageCountArrayL.length; i++){
+            resultCountPrice+=`<tr>`
             countData+=parseInt(avarageCountArrayL[i],10);
             if(avarageCountArrayL[i]>0){
-                avarageResultCountL.innerHTML+=`${avarageCountArrayL[i]}   `
-                avarageResultPriceL.innerHTML+=`${avarageValueArrayL[i]}   `
+                resultCountPrice+=`<td> ${avarageCountArrayL[i]} </td> <td>  ${avarageValueArrayL[i]} </td> </tr>`
+                //avarageResultCountL.innerHTML+=`${avarageCountArrayL[i]}   `
+                //avarageResultPriceL.innerHTML+=`${avarageValueArrayL[i]}   `
             }      
     }
     
@@ -282,13 +302,16 @@ function countAddLifo(){
     }
     let avaragePrice=price/db;
     let value=countData*avaragePrice;
+    resultCountPrice+=`</table>`
+    avarageResultCountL.innerHTML=resultCountPrice;
     avarageResultValueL.innerHTML=`Időszaki zárókészlet értéke: ${value}`;
-    
+    event.preventDefault();
 }
 
-function countMinusLifo(){
-    avarageResultCountL.innerHTML=`Időszaki zárókészlet: `;
-    avarageResultPriceL.innerHTML=`Időszaki átlagár: `;
+function countMinusLifo(event){
+    let resultCountPrice=` <table> <tr> <td> <b>Időszaki zárókészlet </b> </td> <td>  <b>Időszaki átagár</b> </td> </tr>`;
+    //avarageResultCountL.innerHTML=`Időszaki zárókészlet: `;
+    //avarageResultPriceL.innerHTML=`Időszaki átlagár: `;
     let minusValue=parseInt(avCountL.value);
     let countData=0;
     for(let i = avarageCountArrayL.length-1; i>-1; i--){
@@ -305,9 +328,11 @@ function countMinusLifo(){
     }
     for(let i=0; i<avarageCountArrayL.length; i++){
         countData+=avarageCountArrayL[i];
+        resultCountPrice+=`<tr>`
         if(avarageCountArrayL[i]>0){
-            avarageResultCountL.innerHTML+=`${avarageCountArrayL[i]}   `
-            avarageResultPriceL.innerHTML+=`${avarageValueArrayL[i]}   `
+            resultCountPrice+=`<td> ${avarageCountArrayL[i]} </td> <td>  ${avarageValueArrayL[i]} </td> </tr>`
+            //avarageResultCountL.innerHTML+=`${avarageCountArrayL[i]}   `
+            //avarageResultPriceL.innerHTML+=`${avarageValueArrayL[i]}   `
         }      
     }
     let price=0;
@@ -320,9 +345,12 @@ function countMinusLifo(){
     }
     let avaragePrice=price/db;
     let value=countData*avaragePrice;
+    resultCountPrice+=`</table>`
+    avarageResultCountL.innerHTML=resultCountPrice;
     avarageResultValueL.innerHTML=`Időszaki zárókészlet értéke: ${value}`;
+    event.preventDefault();
 }
-function clearLifo(){
+function clearLifo(event){
     avCountL.value="";
     avValueL.value="";
     avarageResultCountL.innerHTML="";
@@ -330,4 +358,5 @@ function clearLifo(){
     avarageResultValueL.innerHTML="";
     avarageCountArrayL=[];
     avarageValueArrayL=[];
+    event.preventDefault();
 }

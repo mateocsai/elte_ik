@@ -31,8 +31,7 @@ const createSnow = (num) => {
 
 
 window.addEventListener("load", () => {
-  createSnow(30)
-  setTimeout(removeSnow, (1000 * 60))
+  createSnow(30);
 });
 
 
