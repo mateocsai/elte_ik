@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Értékelés kalkulátor</title>
+    <link rel="stylesheet" href="animation.css">
+    <link href="https://fonts.cdnfonts.com/css/vtks-army" rel="stylesheet">
+    <style>
+        /*create a bubble for the task with rounded corners and light background and make it fancy*/
+        .task {
+            border-radius: 10px;
+            background-color: #f2f2f2;
+            padding: 20px;
+            margin: 20px;
+            box-shadow: 0 0 10px 0 rgba(0,0,0,0.2);
+        }
+
+        /*make the first paragraph of the task module the title of the task so highlight it accordingly with a light but darker background and make it fancy*/
+        .task > p:first-child {
+            background-color: #e6e6e6;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px 0 rgba(0,0,0,0.2);
+        }
+        @import url('https://fonts.cdnfonts.com/css/vtks-army');
+    </style>
+</head>
+<body>
+   
+    <div id="snow-container" >
+        <h1>Ertekelesi Kalkulator nagyon egyszeru hasznalattal</h1>
+        <div class="task">
+            <p>Átlagár módszer szakaszos értékelés esetén <b>(Ha csökkenést szeretnél hozzáadni, az egységár bármi lehet)</b></p>
+    
+            <input type="number" id="avarageCount" placeholder="Mennyiség">
+            <input type="number" id="avarageValue" placeholder="Egységár" > 
+            <a style="margin-left: 1%;" href="#" class="button" id="avarageAdd">Növekedés hozzáadása</a>
+            <a style="margin-left: 1%;" href="#" class="button" id="avarageMinus">Csökkenés hozzáadása</a> 
+            <a style="margin-left: 1%;" href="#" class="button" id="avarageClear">Újrakezdés</a> 
+            <!--
+            <button id="avarageAdd">Növekedés hozzáadása</button>
+            <button id="avarageMinus">Csökkenés hozzáadása</button>
+            <button id="avarageClear">Újrakezdés</button>
+            -->
+            <p id="avarageEndCount"></p>
+            <p id="avarageEndPrice"></p>
+            <p id="avarageEndValue"></p>
+        </div>
+        <div class="task">
+            <p>Átlagár módszer folyamatos értékelés esetén <b>(Ha csökkenést szeretnél hozzáadni, az egységár bármi lehet)</b></p>
+    
+            <input type="number" id="avarageCountContinue" placeholder="Mennyiség">
+            <input type="number" id="avarageValueContinue" placeholder="Egységár" >
+            <a style="margin-left: 1%;" href="#" class="button" id="avarageAddContinue">Növekedés hozzáadása</a>
+            <a style="margin-left: 1%;" href="#" class="button" id="avarageMinusContinue">Csökkenés hozzáadása</a> 
+            <a style="margin-left: 1%;" href="#" class="button" id="avarageClearContinue">Újrakezdés</a> 
+            <!--
+            <button id="avarageAddContinue">Növekedés hozzáadása</button>
+            <button id="avarageMinusContinue">Csökkenés hozzáadása</button>
+            <button id="avarageClearContinue">Újrakezdés</button>
+            -->
+            <p id="avarageEndCountContinue"></p>
+            <p id="avarageEndPriceContinue"></p>
+            <p id="avarageEndValueContinue"></p>
+        </div>
+        <div class="task">
+            <p>FIFO módszer folyamatos értékelés esetén <b>(Ha csökkenést szeretnél hozzáadni, az egységár bármi lehet)</b></p>
+    
+            <input type="number" id="avarageCountFifo" placeholder="Mennyiség">
+            <input type="number" id="avarageValueFifo" placeholder="Egységár" >
+            <a style="margin-left: 1%;" href="#" class="button" id="avarageAddFifo">Növekedés hozzáadása</a>
+            <a style="margin-left: 1%;" href="#" class="button" id="avarageMinusFifo">Csökkenés hozzáadása</a> 
+            <a style="margin-left: 1%;" href="#" class="button" id="avarageClearFifo">Újrakezdés</a>
+            <!--
+            <button id="avarageAddFifo">Növekedés hozzáadása</button>
+            <button id="avarageMinusFifo">Csökkenés hozzáadása</button>
+            <button id="avarageClearFifo">Újrakezdés</button>
+            -->
+            <p id="avarageEndCountFifo"></p>
+            <p id="avarageEndPriceFifo"></p>
+            <p id="avarageEndValueFifo"></p>
+        </div>
+        <div class="task">
+            <p>LIFO módszer folyamatos értékelés esetén <b>(Ha csökkenést szeretnél hozzáadni, az egységár bármi lehet)</b></p>
+    
+            <input type="number" id="avarageCountLifo" placeholder="Mennyiség">
+            <input type="number" id="avarageValueLifo" placeholder="Egységár" >
+            <a style="margin-left: 1%;" href="#" class="button" id="avarageAddLifo">Növekedés hozzáadása</a>
+            <a style="margin-left: 1%;" href="#" class="button" id="avarageMinusLifo">Csökkenés hozzáadása</a> 
+            <a style="margin-left: 1%;" href="#" class="button" id="avarageClearLifo">Újrakezdés</a>
+            <!--
+            <button id="avarageAddLifo">Növekedés hozzáadása</button>
+            <button id="avarageMinusLifo">Csökkenés hozzáadása</button>
+            <button id="avarageClearLifo">Újrakezdés</button>
+            -->
+            <p id="avarageEndCountLifo"></p>
+            <p id="avarageEndPriceLifo"></p>
+            <p id="avarageEndValueLifo"></p>
+        </div>
+        <div class="task">
+            <a style="margin-left: 1%;" href="index.html" class="button" id="avarageAddLifo">Vissza a főoldalra</a>
+        </div>
+       
+    </div>
+   
+    
+
+    
+    <script src="calculate.js"></script>
+    <script src="animation.js"></script>
+
+</body>
+</html>

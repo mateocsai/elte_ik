@@ -65,7 +65,7 @@ footer .heart {
     opacity: 1;
   }
   100% {
-    top: 100vh;
+    top: 100%;
     opacity: 1;
   }
 }

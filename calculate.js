@@ -184,7 +184,7 @@ function countAddFifo(event){
             countData+=parseInt(avarageCountArrayF[i],10);
             resultCountPrice+=`<tr>`
             if(avarageCountArrayF[i]>0){
-                resultCountPrice+=`<td> ${avarageCountArrayF[i]} </td> <td>  ${avarageValueArrayF[i]} </td> </tr>`
+                resultCountPrice+=`<td> <b>${avarageCountArrayF[i]} </b></td> <td> <b> ${avarageValueArrayF[i]} </b></td> </tr>`
                 //avarageResultCountF.innerHTML+=`${avarageCountArrayF[i]} ${avarageValueArrayF[i]} `;
                 //avarageResultPriceF.innerHTML+=`${avarageValueArrayF[i]}   `
             }      
@@ -202,7 +202,7 @@ function countAddFifo(event){
     let value=countData*avaragePrice;
     resultCountPrice+=`</table>`
     avarageResultCountF.innerHTML=resultCountPrice;
-    avarageResultValueF.innerHTML=`Időszaki zárókészlet értéke: ${value}`;
+    avarageResultValueF.innerHTML=`<b>Időszaki zárókészlet értéke: ${value}</b>`;
     event.preventDefault();
 }
 
@@ -228,7 +228,7 @@ function countMinusFifo(event){
         countData+=avarageCountArrayF[i];
         resultCountPrice+=`<tr>`
         if(avarageCountArrayF[i]>0){
-            resultCountPrice+=`<td> ${avarageCountArrayF[i]} </td> <td>  ${avarageValueArrayF[i]} </td> </tr>`
+            resultCountPrice+=`<td><b> ${avarageCountArrayF[i]}</b> </td> <td> <b> ${avarageValueArrayF[i]} </b></td> </tr>`
             //avarageResultCountF.innerHTML+=`${avarageCountArrayF[i]}   `
             //avarageResultPriceF.innerHTML+=`${avarageValueArrayF[i]}   `
         }      
@@ -245,7 +245,7 @@ function countMinusFifo(event){
     let value=countData*avaragePrice;
     resultCountPrice+=`</table>`
     avarageResultCountF.innerHTML=resultCountPrice;
-    avarageResultValueF.innerHTML=`Időszaki zárókészlet értéke: ${value}`;
+    avarageResultValueF.innerHTML=`<b>Időszaki zárókészlet értéke: ${value}</b>`;
     event.preventDefault();
 }
 function clearFifo(event){
@@ -286,7 +286,7 @@ function countAddLifo(event){
             resultCountPrice+=`<tr>`
             countData+=parseInt(avarageCountArrayL[i],10);
             if(avarageCountArrayL[i]>0){
-                resultCountPrice+=`<td> ${avarageCountArrayL[i]} </td> <td>  ${avarageValueArrayL[i]} </td> </tr>`
+                resultCountPrice+=`<td> <b>${avarageCountArrayL[i]}</b> </td> <td><b>  ${avarageValueArrayL[i]}</b> </td> </tr>`
                 //avarageResultCountL.innerHTML+=`${avarageCountArrayL[i]}   `
                 //avarageResultPriceL.innerHTML+=`${avarageValueArrayL[i]}   `
             }      
@@ -304,7 +304,7 @@ function countAddLifo(event){
     let value=countData*avaragePrice;
     resultCountPrice+=`</table>`
     avarageResultCountL.innerHTML=resultCountPrice;
-    avarageResultValueL.innerHTML=`Időszaki zárókészlet értéke: ${value}`;
+    avarageResultValueL.innerHTML=`<b>Időszaki zárókészlet értéke: ${value}</b>`;
     event.preventDefault();
 }
 
@@ -330,7 +330,7 @@ function countMinusLifo(event){
         countData+=avarageCountArrayL[i];
         resultCountPrice+=`<tr>`
         if(avarageCountArrayL[i]>0){
-            resultCountPrice+=`<td> ${avarageCountArrayL[i]} </td> <td>  ${avarageValueArrayL[i]} </td> </tr>`
+            resultCountPrice+=`<td> <b>${avarageCountArrayL[i]}</b> </td> <td> <b> ${avarageValueArrayL[i]}</b> </td> </tr>`
             //avarageResultCountL.innerHTML+=`${avarageCountArrayL[i]}   `
             //avarageResultPriceL.innerHTML+=`${avarageValueArrayL[i]}   `
         }      
@@ -347,7 +347,7 @@ function countMinusLifo(event){
     let value=countData*avaragePrice;
     resultCountPrice+=`</table>`
     avarageResultCountL.innerHTML=resultCountPrice;
-    avarageResultValueL.innerHTML=`Időszaki zárókészlet értéke: ${value}`;
+    avarageResultValueL.innerHTML=`<b>Időszaki zárókészlet értéke: ${value}</b>`;
     event.preventDefault();
 }
 function clearLifo(event){
