@@ -51,6 +51,9 @@
         <div class="task">
             <p>Árbevétel</p>
             <table>
+              <tr>
+                <td id="ar" colspan="4"><input type="number" id="OsszKoltseg" placeholder="Árbevétel"></td>
+              </tr>
                 <tr>
                   <td id="szk" colspan="2"><input type="number" id="SzamviteliKoltseg" placeholder="Számviteli Költség"></td>
                   <td id="szp" colspan="2"><input type="number" id="SzamviteliProfit" placeholder="Számviteli Profit"></td>
@@ -70,19 +73,41 @@
                   <td id="gk" colspan="3"><input type="number" id="GazdasagiKoltseg" placeholder="Gazdasági Költség"></td>
                   <td id="gp3"><input type="number" id="GazdasagiProfit3" placeholder="Gazdasági Profit"></td>
                 </tr>
-                <tr>
-                    <td id="ossz" colspan="4"><input type="number" id="OsszKoltseg" placeholder="Össz Költség"></td>
+             <!--  <tr>
+                    <td id="ossz" colspan="4"><input type="number" id="OsszKoltseg" placeholder="Árbevétel"></td>
                 </tr>
+              --> 
               </table>
-              <a style="margin-left: 1%; margin-top: 1%;" href="#" class="button" id="calculate">Számolás</a>
+              <a style=" margin-top: 1%;" href="#" class="button" id="calculate">Számolás</a>
+              <a style=" margin-top: 1%; margin-left: 1%;" href="#" class="button" id="reset">Újrakezdés</a>
+
            
         </div>
         <div class="task">
             <p>Vállalkozás költségei</p>
-           
+            <table id="myTable">
+                <thead>
+                  <tr>
+                    <th>Q</th>
+                    <th>FC</th>
+                    <th>VC</th>
+                    <th>TC</th>
+                    <th>MC</th>
+                    <th>AC</th>
+                    <th>AFC</th>
+                    <th>AVC</th>
+                  </tr>
+                </thead>
+                <tbody id="body">
+                  <!-- Itt jelennek meg a dinamikusan hozzáadott sorok -->
+                </tbody>
+              </table>
+              <a style=" margin-top: 1%;" href="#" class="button" id="addRow">Sor hozzáadása</a>
+              <a style="margin-left: 1%; margin-top: 1%;" href="#" class="button" id="calculate2">Számolás</a>
+              <a style="margin-left: 1%; margin-top: 1%;" href="#" class="button" id="delete2">Újrakezdés</a>
         </div>
         <div class="task">
-            <a style="margin-left: 1%;" href="index.html" class="button" id="avarageAddLifo">Vissza a főoldalra</a>
+            <a href="index.html" class="button" id="avarageAddLifo">Vissza a főoldalra</a>
         </div>
        
     </div>
