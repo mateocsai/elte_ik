@@ -424,7 +424,9 @@ function AddRowToTable(event) {
            
             
         }
-        while(!ready){
+        let count=0;
+        while(!ready || count < 100){
+            count++;
         for(let i=0; i<counter; i++){
             if(i === 0){
                 boolValues[i][0]=true;

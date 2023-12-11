@@ -19,7 +19,7 @@ main {
 
 h1 {
   color: black;
-  font-family: 'vtks army', sans-serif; font-family: 'vtks army 3d', sans-serif;
+  font-family: 'Pacifico', sans-serif; font-family: 'Pacifico', sans-serif;
   text-align: center;
                                                 
 }
@@ -65,7 +65,7 @@ footer .heart {
     opacity: 1;
   }
   100% {
-    top: 100%;
+    top: 10%;
     opacity: 1;
   }
 }
