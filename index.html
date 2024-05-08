@@ -1,46 +1,460 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kalkulatorok</title>
-    <link rel="stylesheet" href="animation.css">
-    <link href="https://fonts.cdnfonts.com/css/vtks-army" rel="stylesheet">
+    <title>Summer Schedule</title>
     <style>
-        /*create a bubble for the task with rounded corners and light background and make it fancy*/
-        .task {
-            border-radius: 10px;
+        body {
             background-color: #f2f2f2;
-            padding: 20px;
-            margin: 20px;
-            box-shadow: 0 0 10px 0 rgba(0,0,0,0.2);
+            font-family: Arial, sans-serif;
         }
-
-        /*make the first paragraph of the task module the title of the task so highlight it accordingly with a light but darker background and make it fancy*/
-        .task > p:first-child {
-            background-color: #e6e6e6;
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            background-color: #fff;
+            color: #333;
+        }
+        th {
+            background-color: #333;
+            color: #fff;
             padding: 10px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px 0 rgba(0,0,0,0.2);
+            text-align: left;
         }
-        @import url('https://fonts.cdnfonts.com/css/vtks-army');
+        td {
+            background-color: #f2f2f2;
+            padding: 10px;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            border: none;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        input[type="text"]:focus {
+            outline: none;
+            box-shadow: 0 0 5px dodgerblue;
+        }
     </style>
+   
+    
 </head>
 <body>
-   
-    <div id="snow-container" >
-        <h1>Üdvözöljük az Algoritmus Kalkulátorok Weboldalán!</h1>
-        <div class="task">
-            <h2>Ezen az oldalon különböző algoritmusokhoz készített kalkulátorokat talál. 
-                Számolja ki egyszerűen és gyorsan a különböző matematikai és programozási problémák eredményeit.</h2>
-            <ul>
-                <li><a href="calculate.html">Vállalati gazdaságtan alapjai számolások</a></li>
-                <li><a href="costs.html">Közgazdaságtan számolások</a></li>
-            </ul>
-        </div> 
- 
-    <script src="calculate.js"></script>
-    <script src="animation.js"></script>
+    <h1>Summer Schedule</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Day</th>
+                <th>Who</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>June 1</td>
+                <td><input type="text" name="name" placeholder="Enter name"></td>
+            </tr>
+            </tr>
+            <tr>
+                <td>June 2</td>
+                <td><input type="text" name="name" placeholder="Enter name"></td>
+            </tr>
+            <tr>
+                <td>June 3</td>
+                <td><input type="text" name="name" placeholder="Enter name"></td>
+            </tr>
+            <tr>
+                <td>June 4</td>
+                <td><input type="text" name="name" placeholder="Enter name"></td>
+            </tr>
+            <tr>
+                <td>June 5</td>
+                <td><input type="text" name="name" placeholder="Enter name"></td>
+            </tr>
+            <tr>
+                <td>June 6</td>
+                <td><input type="text" name="name" placeholder="Enter name"></td>   
+            </tr>
+            <tr>
+                <td>June 7</td>
+                <td><input type="text" name="name" placeholder="Enter name"></td>
+            </tr>
+            <tr>
+                <td>June 8</td>
+                <td><input type="text" name="name" placeholder="Enter name"></td>
+            </tr>
+            <tr>
+                <td>June 9</td>
+                <td><input type="text" name="name" placeholder="Enter name"></td>
+            </tr>
+            <tr>
+                <td>June 10</td>
+                <td><input type="text" name="name" placeholder="Enter name"></td>
+            </tr>
+            <tr>
+                <td>June 11</td>
+                <td><input type="text" name="name" placeholder="Enter name"></td>
+            </tr>
+            <tr>
+                <td>June 12</td>
+                <td><input type="text" name="name" placeholder="Enter name"></td>
+            </tr>
+            <tr>
+                <td>June 13</td>
+                <td><input type="text" name="name" placeholder="Enter name"></td>   
+            </tr>
+            <tr>
+                <td>June 14</td>
+                <td><input type="text" name="name" placeholder="Enter name"></td>
+            </tr>
+            <tr>
+                <td>June 15</td>
+                <td><input type="text" name="name" placeholder="Enter name"></td>
+            </tr>
+            <tr>
+                <td>June 16</td>
+                <td><input type="text" name="name" placeholder="Enter name"></td>
+            </tr>
+            <tr>
+                <td>June 17</td>
+                <td><input type="text" name="name" placeholder="Enter name"></td>
+            </tr>
+            <tr>
+                <td>June 18</td>
+                <td><input type="text" name="name" placeholder="Enter name"></td>
+            </tr>
+            <tr>
+                <td>June 19</td>
+                <td><input type="text" name="name" placeholder="Enter name"></td>
+            </tr>
+            <tr>
+                <td>June 20</td>
+                <td><input type="text" name="name" placeholder="Enter name"></td>   
+            </tr>
+            <tr>
+                <td>June 21</td>
+                <td><input type="text" name="name" placeholder="Enter name"></td>
+            </tr>
+            <tr>
+                <td>June 22</td>
+                <td><input type="text" name="name" placeholder="Enter name"></td>
+            </tr>
+            <tr>
+                <td>June 23</td>
+                <td><input type="text" name="name" placeholder="Enter name"></td>
+            </tr>
+            <tr>
+                <td>June 24</td>
+                <td><input type="text" name="name" placeholder="Enter name"></td>
+            </tr>
+            <tr>
+                <td>June 25</td>
+                <td><input type="text" name="name" placeholder="Enter name"></td>
+            </tr>
+            <tr>
+                <td>June 26</td>
+                <td><input type="text" name="name" placeholder="Enter name"></td>
+            </tr>
+            <tr>
+                <td>June 27</td>
+                <td><input type="text" name="name" placeholder="Enter name"></td>   
+            </tr>
+            <tr>
+                <td>June 28</td>
+                <td><input type="text" name="name" placeholder="Enter name"></td>
+            </tr>
+            <tr>
+                <td>June 29</td>
+                <td><input type="text" name="name" placeholder="Enter name"></td>
+            </tr>
+            <tr>
+                <td>June 30</td>
+                <td><input type="text" name="name" placeholder="Enter name"></td>
+            </tr>
+            <tr>
+                <td>Juli 1</td>
+                <td><input type="text" name="name" placeholder="Enter name"></td>
+            </tr>
+            <tr>
+                <td>Juli 2</td>
+                <td><input type="text" name="name" placeholder="Enter name"></td>
+            </tr>
+            <tr>
+                <td>Juli 3</td>
+                <td><input type="text" name="name" placeholder="Enter name"></td>
+            </tr>
+            <tr>
+                <td>Juli 4</td>
+                <td><input type="text" name="name" placeholder="Enter name"></td>
+            </tr>
+            <tr>
+                <td>Juli 5</td>
+                <td><input type="text" name="name" placeholder="Enter name"></td>
+            </tr>
+            <tr>
+                <td>Juli 6</td>
+                <td><input type="text" name="name" placeholder="Enter name"></td>   
+            </tr>
+            <tr>
+                <td>Juli 7</td>
+                <td><input type="text" name="name" placeholder="Enter name"></td>
+            </tr>
+            <tr>
+                <td>Juli 8</td>
+                <td><input type="text" name="name" placeholder="Enter name"></td>
+            </tr>
+            <tr>
+                <td>Juli 9</td>
+                <td><input type="text" name="name" placeholder="Enter name"></td>
+            </tr>
+            <tr>
+                <td>Juli 10</td>
+                <td><input type="text" name="name" placeholder="Enter name"></td>
+            </tr>
+            <tr>
+                <td>Juli 11</td>
+                <td><input type="text" name="name" placeholder="Enter name"></td>
+            </tr>
+            <tr>
+                <td>Juli 12</td>
+                <td><input type="text" name="name" placeholder="Enter name"></td>
+            </tr>
+            <tr>
+                <td>Juli 13</td>
+                <td><input type="text" name="name" placeholder="Enter name"></td>   
+            </tr>
+            <tr>
+                <td>Juli 14</td>
+                <td><input type="text" name="name" placeholder="Enter name"></td>
+            </tr>
+            <tr>
+                <td>Juli 15</td>
+                <td><input type="text" name="name" placeholder="Enter name"></td>
+            </tr>
+            <tr>
+                <td>Juli 16</td>
+                <td><input type="text" name="name" placeholder="Enter name"></td>
+            </tr>
+            <tr>
+                <td>Juli 17</td>
+                <td><input type="text" name="name" placeholder="Enter name"></td>
+            </tr>
+            <tr>
+                <td>Juli 18</td>
+                <td><input type="text" name="name" placeholder="Enter name"></td>
+            </tr>
+            <tr>
+                <td>Juli 19</td>
+                <td><input type="text" name="name" placeholder="Enter name"></td>
+            </tr>
+            <tr>
+                <td>Juli 20</td>
+                <td><input type="text" name="name" placeholder="Enter name"></td>   
+            </tr>
+            <tr>
+                <td>Juli 21</td>
+                <td><input type="text" name="name" placeholder="Enter name"></td>
+            </tr>
+            <tr>
+                <td>Juli 22</td>
+                <td><input type="text" name="name" placeholder="Enter name"></td>
+            </tr>
+            <tr>
+                <td>Juli 23</td>
+                <td><input type="text" name="name" placeholder="Enter name"></td>
+            </tr>
+            <tr>
+                <td>Juli 24</td>
+                <td><input type="text" name="name" placeholder="Enter name"></td>
+            </tr>
+            <tr>
+                <td>Juli 25</td>
+                <td><input type="text" name="name" placeholder="Enter name"></td>
+            </tr>
+            <tr>
+                <td>Juli 26</td>
+                <td><input type="text" name="name" placeholder="Enter name"></td>
+            </tr>
+            <tr>
+                <td>Juli 27</td>
+                <td><input type="text" name="name" placeholder="Enter name"></td>   
+            </tr>
+            <tr>
+                <td>Juli 28</td>
+                <td><input type="text" name="name" placeholder="Enter name"></td>
+            </tr>
+            <tr>
+                <td>Juli 29</td>
+                <td><input type="text" name="name" placeholder="Enter name"></td>
+            </tr>
+            <tr>
+                <td>Juli 30</td>
+                <td><input type="text" name="name" placeholder="Enter name"></td>
+            </tr>
+            <tr>
+                <td>Juli 31</td>
+                <td><input type="text" name="name" placeholder="Enter name"></td>
+            </tr>
+            <tr>
+                <td>August 1</td>
+                <td><input type="text" name="name" placeholder="Enter name"></td>
+            </tr>
+            <tr>
+                <td>August 2</td>
+                <td><input type="text" name="name" placeholder="Enter name"></td>
+            </tr>
+            <tr>
+                <td>August 3</td>
+                <td><input type="text" name="name" placeholder="Enter name"></td>
+            </tr>
+            <tr>
+                <td>August 4</td>
+                <td><input type="text" name="name" placeholder="Enter name"></td>
+            </tr>
+            <tr>
+                <td>August 5</td>
+                <td><input type="text" name="name" placeholder="Enter name"></td>
+            </tr>
+            <tr>
+                <td>August 6</td>
+                <td><input type="text" name="name" placeholder="Enter name"></td>   
+            </tr>
+            <tr>
+                <td>August 7</td>
+                <td><input type="text" name="name" placeholder="Enter name"></td>
+            </tr>
+            <tr>
+                <td>August 8</td>
+                <td><input type="text" name="name" placeholder="Enter name"></td>
+            </tr>
+            <tr>
+                <td>August 9</td>
+                <td><input type="text" name="name" placeholder="Enter name"></td>
+            </tr>
+            <tr>
+                <td>August 10</td>
+                <td><input type="text" name="name" placeholder="Enter name"></td>
+            </tr>
+            <tr>
+                <td>August 11</td>
+                <td><input type="text" name="name" placeholder="Enter name"></td>
+            </tr>
+            <tr>
+                <td>August 12</td>
+                <td><input type="text" name="name" placeholder="Enter name"></td>
+            </tr>
+            <tr>
+                <td>August 13</td>
+                <td><input type="text" name="name" placeholder="Enter name"></td>   
+            </tr>
+            <tr>
+                <td>August 14</td>
+                <td><input type="text" name="name" placeholder="Enter name"></td>
+            </tr>
+            <tr>
+                <td>August 15</td>
+                <td><input type="text" name="name" placeholder="Enter name"></td>
+            </tr>
+            <tr>
+                <td>August 16</td>
+                <td><input type="text" name="name" placeholder="Enter name"></td>
+            </tr>
+            <tr>
+                <td>August 17</td>
+                <td><input type="text" name="name" placeholder="Enter name"></td>
+            </tr>
+            <tr>
+                <td>August 18</td>
+                <td><input type="text" name="name" placeholder="Enter name"></td>
+            </tr>
+            <tr>
+                <td>August 19</td>
+                <td><input type="text" name="name" placeholder="Enter name"></td>
+            </tr>
+            <tr>
+                <td>August 20</td>
+                <td><input type="text" name="name" placeholder="Enter name"></td>   
+            </tr>
+            <tr>
+                <td>August 21</td>
+                <td><input type="text" name="name" placeholder="Enter name"></td>
+            </tr>
+            <tr>
+                <td>August 22</td>
+                <td><input type="text" name="name" placeholder="Enter name"></td>
+            </tr>
+            <tr>
+                <td>August 23</td>
+                <td><input type="text" name="name" placeholder="Enter name"></td>
+            </tr>
+            <tr>
+                <td>August 24</td>
+                <td><input type="text" name="name" placeholder="Enter name"></td>
+            </tr>
+            <tr>
+                <td>August 25</td>
+                <td><input type="text" name="name" placeholder="Enter name"></td>
+            </tr>
+            <tr>
+                <td>August 26</td>
+                <td><input type="text" name="name" placeholder="Enter name"></td>
+            </tr>
+            <tr>
+                <td>August 27</td>
+                <td><input type="text" name="name" placeholder="Enter name"></td>   
+            </tr>
+            <tr>
+                <td>August 28</td>
+                <td><input type="text" name="name" placeholder="Enter name"></td>
+            </tr>
+            <tr>
+                <td>August 29</td>
+                <td><input type="text" name="name" placeholder="Enter name"></td>
+            </tr>
+            <tr>
+                <td>August 30</td>
+                <td><input type="text" name="name" placeholder="Enter name"></td>
+            </tr>
+            <tr>
+                <td>August 31</td>
+                <td><input type="text" name="name" placeholder="Enter name"></td>
+            </tr>
 
+        </tbody>
+    </table>
 </body>
 </html>
+
+<script>
+    // Function to save data to localStorage
+    function saveData() {
+        var inputs = document.getElementsByTagName('input');
+        var data = [];
+        for (var i = 0; i < inputs.length; i++) {
+            data.push(inputs[i].value);
+        }
+        localStorage.setItem('inputData', JSON.stringify(data));
+    }
+    // Function to load data from localStorage
+    function loadData() {
+        var storedData = localStorage.getItem('inputData');
+        if (storedData) {
+            var data = JSON.parse(storedData);
+            var inputs = document.getElementsByTagName('input');
+            for (var i = 0; i < inputs.length; i++) {
+                inputs[i].value = data[i] || '';
+            }
+        }
+    }
+    // Event listener for input change
+    var inputs = document.getElementsByTagName('input');
+    for (var i = 0; i < inputs.length; i++) {
+        inputs[i].addEventListener('input', saveData);
+    }
+    // Load data when the page is loaded
+    window.addEventListener('load', loadData);
+
+    
+</script>
