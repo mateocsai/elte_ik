@@ -42,7 +42,7 @@ body{
 img {
     width: auto; /* A szélesség arányosan növekszik */
     height: auto; /* A magasság arányosan növekszik */
-    display:flex; /* Kép blokk szintű elemmé alakítása, hogy eltüntesd az alatta lévő fehér teret */
+    display:flex; 
     margin: 10px;
 }
 
