@@ -1,0 +1,67 @@
+body{
+    background-image: url('images/background.png');
+}
+.top-section {
+    height: 66.67vh; /* 2/3 a képernyő magasságából */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bottom-section {
+    height: 33.33vh; /* 1/3 a képernyő magasságából */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('images/pool.png');
+}
+.top-item {
+    flex: 1; /* Mindhárom rész egyenlően oszlik el */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto; 
+    height: 387px; 
+    width: 523px;
+    background-image: url('images/screen.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.bottom-item {
+    flex: 1; /* Mind a hat rész egyenlően oszlik el */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    padding: 10px;
+    height: 200px;
+    width: 200px;
+    
+}
+img {
+    width: auto; /* A szélesség arányosan növekszik */
+    height: auto; /* A magasság arányosan növekszik */
+    display:flex; /* Kép blokk szintű elemmé alakítása, hogy eltüntesd az alatta lévő fehér teret */
+    margin: 10px;
+}
+
+
+.grayed-out{
+    filter: grayscale(100%);
+}
+.overlay {
+    position: fixed;  /* Fix pozíció a képernyőn */
+    top: 0;
+    left: 0;
+    width: 100vw;  /* Teljes szélesség */
+    height: 100vh; /* Teljes magasság */
+    background-color: rgba(0, 0, 0, 0.5); /* Félátlátszó fekete háttér */
+    display: flex;  
+    justify-content: center;
+    align-items: center;
+}
+.overlay img {
+    width: 100px;
+    height: 100px;
+}
