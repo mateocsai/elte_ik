@@ -1,6 +1,3 @@
-addEventListener('load',  () => {
-    
-});
 //Gyümölcs halom képek
 const imageUrls = [
     './images/apple_group.png',
@@ -67,137 +64,101 @@ for (let i = 0; i < divIds.length; i++) {
 
 //Kattintások státusza
 let stat =[];
+let fruitWhere = [];
+let kontenerStat = [];
 for(let i=0; i<6; i++){
     stat.push("not clicked");
+    kontenerStat.push("not clicked");
+    fruitWhere.push("nowhere");
 }
 //Képek számlálója a konténerekben
 let count = [0, 0, 0];
+let gameOver = false;
+let kontenerFrom = 0;
 
 //Kattintások kezelése
 document.addEventListener('click', (event) => {
-    if(event.target.id!==null){
-    //Kattintások kezelése a halmokon 
-       switch(event.target.id){
-           case 'bot1':
-              if(stat[0]==="not clicked"){
-                stat[0]="clicked";
-                for(let i=0; i<6; i++){
-                    if(i!==0){
-                        stat[i] = stat[i] !== "can not used" ? stat[i]="not clicked" : stat[i];
-                    }
-                }
-              }
-               break;
-           case 'bot2':
-            if(stat[1]==="not clicked"){
-                stat[1]="clicked";
-                for(let i=0; i<6; i++){
-                    if(i!==1){
-                        stat[i] = stat[i] !== "can not used" ? stat[i]="not clicked" : stat[i];
-                    }
-                }
-              }
-               break;
-           case 'bot3':
-            if(stat[2]==="not clicked"){
-                stat[2]="clicked";
-                for(let i=0; i<6; i++){
-                    if(i!==2){
-                        stat[i] = stat[i] !== "can not used" ? stat[i]="not clicked" : stat[i];
-                    }
-                }
-              }
-               break;
-           case 'bot4':
-            if(stat[3]==="not clicked"){
-                stat[3]="clicked";
-                for(let i=0; i<6; i++){
-                    if(i!==3){
-                        stat[i] = stat[i] !== "can not used" ? stat[i]="not clicked" : stat[i];
-                    }
-                }
-              }
-              
-               break;
-           case 'bot5':
-            if(stat[4]==="not clicked"){
-                stat[4]="clicked";
-                for(let i=0; i<6; i++){
-                    if(i!==4){
-                        stat[i] = stat[i] !== "can not used" ? stat[i]="not clicked" : stat[i];
-                    }
-                }
-              }
-               break;
-           case 'bot6':
-            if(stat[5]==="not clicked"){
-                stat[5]="clicked";
-                for(let i=0; i<6; i++){
-                    if(i!==5){
-                        stat[i] = stat[i] !== "can not used" ? stat[i]="not clicked" : stat[i];
-                    }
-                }
-               
-              }
-               break;   
-       }
+    if(gameOver){
+        return;
     }
-    //Kattintások kezelése a konténerekben
-        switch(event.target.id){
-            case '1':
-                for(let i=0; i<6; i++){
-                    if(stat[i]==="clicked"&& count[0]<2){
-                        document.getElementById("1").innerHTML += `<img src="${pictures1[i]}" alt=""> ` ;
-                        count[0]++;
-                        stat[i]="can not used";
-                        document.getElementById(divIds[i]).style.filter = 'grayscale(100%)';
-                    }
+    if(event.target.id!==null){
+    //Kattintások kezelése 
+    let id = event.target.id;
+    let index;
+    if(id.includes('bot')){
+        index = parseInt(id.replace('bot', ''))-1;
+        if(stat[index]==="not clicked"){
+            stat[index]="clicked";
+            for(let i=0; i<6; i++){
+                if(i!==index){
+                    stat[i] = stat[i] !== "can not used" ? stat[i]="not clicked" : stat[i];
                 }
-                break;
-            case '2':
-                for(let i=0; i<6; i++){
-                    if(stat[i]==="clicked"&& count[1]<2){
-                        document.getElementById("2").innerHTML += `<img src="${pictures1[i]}" alt=""> ` ;
-                        count[1]++;
-                        stat[i]="can not used";
-                        document.getElementById(divIds[i]).style.filter = 'grayscale(100%)';
-                    }
-
-                }
-                break;
-            case '3':
-                for(let i=0; i<6; i++){
-                    if(stat[i]==="clicked"&& count[2]<2){
-                        document.getElementById("3").innerHTML += `<img src="${pictures1[i]}" alt=""> ` ;
-                        count[2]++;
-                        stat[i]="can not used";
-                        document.getElementById(divIds[i]).style.filter = 'grayscale(100%)';
-                    }
-
-                }
-                break;
+            }
         }
+    }
+    else if(parseInt(event.target.id)){
+        index = parseInt(event.target.id)-1;
+        for(let i=0; i<6; i++){
+            if(stat[i]==="clicked"&& count[index]<2){
+                event.target.innerHTML += `<img src="${pictures1[i]}" alt="${i}" id="img${i}"> ` ;
+                count[index]++;
+                stat[i]="can not used";
+                fruitWhere[i]=event.target.id;
+                document.getElementById(divIds[i]).style.filter = 'grayscale(100%)';
+            }
+            else if(kontenerStat[i]==="clicked" && count[index]<2){
+                document.getElementById(`img${i}`).remove();
+                event.target.innerHTML += `<img src="${pictures1[i]}" alt="${i}" id="img${i}"> ` ;
+                count[index]++;
+                count[fruitWhere[i]-1]--;
+                fruitWhere[i]=event.target.id;
+                
+            }
+        }
+    }     
+        
+        //Kattintások kezelése a konténerekben, átpakoláshoz
+        for(let i=0; i<6; i++){
+            if(event.target.alt==i){
+                kontenerStat[i]="clicked"
+                for(let j=0; j<6; j++){stat[j]="not clicked"}
+            }
+            else{
+                kontenerStat[i]="not clicked"
+            }
+            
+        }
+        
+    }
         //Kiválasztott képek kerete
         for (let i = 0; i < stat.length; i++) {
             if(stat[i]==="clicked"){
                 document.getElementById(divIds[i]).style.border = `5px dashed #0f0`;
             }
             else{
-                document.getElementById(divIds[i]).style.border = `none`;
+                document.getElementById(divIds[i]).style.border = `5px solid transparent`;
             }
+            if(kontenerStat[i]==="clicked"){
+                document.getElementById(`img${i}`).style.border = `5px dashed #0f0`;
+            }
+            else if(document.getElementById(`img${i}`)!==null){
+                document.getElementById(`img${i}`).style.border = `5px solid transparent`;
+            }
+
         
     }
     //Konténerek ellenőrzése, ha mindben 2 kép van, akkor megjelenik a csillag
     if(count.every((element) => element === 2)){
-        document.body.innerHTML = "" ;
+        //document.body.innerHTML = "" ;
         const overlay =document.createElement('div');
         overlay.classList.add('overlay');
         const star = document.createElement('img')
         star.src = "./images/star.svg";   
         overlay.appendChild(star);
         document.body.appendChild(overlay);
-        
+        gameOver = true;
     }
+    
     
 });
 
